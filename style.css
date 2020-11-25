@@ -1,0 +1,22 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 150px repeat(3, 80px);
+  font-size: 20px;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+.score-upper,
+.score-lower {
+  grid-template-rows: repeat(9, 50px);
+}
+
+.score-total {
+  grid-template-rows: 70px;
+}
+
+.grid-container > div {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+}
