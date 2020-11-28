@@ -1,11 +1,10 @@
 const dice = document.querySelectorAll('input');
+const form = document.querySelector('form');
+const firstGame = document.querySelectorAll('[data-game-01]');
 let diceValue = {};
 
 
-function handleInput(id, value) {
-    var diceNumber = id.charAt(id.length - 1);
 
-    diceValue[`${diceNumber}`] = value;
 //점수 계산
 function makeScore() {
     let aces = 0;
@@ -46,11 +45,18 @@ function makeScore() {
     firstGame[5].innerText = sixes;
 }
 
+function handleSubmit(event) {
+    event.preventDefault();
+
+    for(let i=0; i < 5; i++){
+        let value = parseInt(event.target[i].value);
+
+        diceValue[i] = value;
+    }
     makeScore();
 }
 
-dice.forEach(input => {
-    input.addEventListener('change', () => {
-        handleInput(input.id, input.value)
-    })
-})
+function init(){
+    form.addEventListener("submit", handleSubmit)
+}
+init();
