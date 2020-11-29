@@ -19,9 +19,18 @@
   border: 1px solid black;
   display: flex;
   align-items: center;
+  padding: 0px 10px;
 }
 
-div[data-game-01] {
-  padding-right: 10px;
+.score {
   justify-content: flex-end;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.score:hover {
+  cursor: pointer;
+}
+
+.confirmed {
+  color: rgba(0, 0, 0, 1);
 }
