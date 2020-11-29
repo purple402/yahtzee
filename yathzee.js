@@ -6,6 +6,17 @@ let diceValue = {};
 
 
 //점수 계산
+// 확정된 점수는 변화시키지 않음
+function checkConfirm(i, score){
+    //upper section
+    if(firstGame[i].classList.contains(CONFIRM)) {
+        return;
+    } else {
+        firstGame[i].innerText = score;
+    }
+}
+
+// 점수 계산
 function makeScore() {
     let aces = 0;
     let twos = 0;
@@ -37,12 +48,14 @@ function makeScore() {
         }
     }
     
-    firstGame[0].innerText = aces;
-    firstGame[1].innerText = twos;
-    firstGame[2].innerText = threes;
-    firstGame[3].innerText = fours;
-    firstGame[4].innerText = fives;
-    firstGame[5].innerText = sixes;
+    checkConfirm(0, aces);
+    checkConfirm(1, twos);
+    checkConfirm(2, threes);
+    checkConfirm(3, fours);
+    checkConfirm(4, fives);
+    checkConfirm(5, sixes);
+
+    //lower section
 }
 
 function handleSubmit(event) {
