@@ -32,5 +32,11 @@
 }
 
 .confirmed {
-  color: rgba(0, 0, 0, 1);
+  color: white;
+  background-color: rgba(49, 49, 230, 0.555);
+}
+
+.bonus {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
 }
