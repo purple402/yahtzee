@@ -56,7 +56,21 @@ function handleSubmit(event) {
     makeScore();
 }
 
+function clicked(event) {
+    const div = event.target;
+
+    div.classList.add(CONFIRM);
+    countTotal(div);
+    // 다시 클릭하지 못하게 함
+    div.removeEventListener('click', clicked);
+}
+
 function init(){
+    // submit 한 value 처리
     form.addEventListener("submit", handleSubmit)
+    // 숫자를 클릭하면 확정되도록 함
+    firstGame.forEach(div => {
+        div.addEventListener('click', clicked)
+    })
 }
 init();
