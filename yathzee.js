@@ -2,10 +2,29 @@ const dice = document.querySelectorAll('input');
 const form = document.querySelector('form');
 const firstGame = document.querySelectorAll('[data-game-01]');
 let diceValue = {};
+let subtotal = null;
+const CONFIRM = 'confirmed';
+
+function countTotal(div){
+    // subtotal 계산
+    for(let i=0; i<5; i++){
+        if(firstGame[i].classList.contains(CONFIRM)){
+            subtotal = subtotal + parseInt(firstGame[i].innerText);
+        }
+    }
+    firstGame[6].innerText = subtotal;
+    
+    // check bonus
+    if (subtotal > 62) {
+        firstGame[7].innerText = '+ 35';
+        firstGame[7].classList.remove('bonus')
+    } else if (subtotal <= 62) {
+        firstGame[7].innerText = subtotal - 63;
+    }
 
 
+}
 
-//점수 계산
 // 확정된 점수는 변화시키지 않음
 function checkConfirm(i, score){
     //upper section
@@ -18,6 +37,7 @@ function checkConfirm(i, score){
 
 // 점수 계산
 function makeScore() {
+    //upper section
     let aces = 0;
     let twos = 0;
     let threes = 0;
