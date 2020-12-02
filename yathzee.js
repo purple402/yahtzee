@@ -77,7 +77,14 @@ function makeScore() {
     checkConfirm(4, fives);
     checkConfirm(5, sixes);
 
-    //lower section
+    // lower section
+    // chance
+    let chance = 0;
+    for(let i=0; i<5; i++){
+        chance = chance + diceValue[i];
+    }
+    checkConfirm(8, chance);
+
 }
 
 function handleSubmit(event) {
