@@ -85,6 +85,25 @@ function makeScore() {
     }
     checkConfirm(8, chance);
 
+    // 3 of a kind
+    // count 에 값이 있으면 => 실행으로 바꿔야함
+    for(let i=1; i<7; i++){
+        let kindValue = count[i]*i;
+        if(count[i] === 3){
+            checkConfirm(9, kindValue);
+            checkConfirm(10, 0);
+            checkConfirm(14, 0);
+        } else if(count[i] === 4){
+            checkConfirm(9, kindValue);
+            checkConfirm(10, kindValue);
+            checkConfirm(14, 0);
+        } else if(count[i] === 5){
+            checkConfirm(9, kindValue);
+            checkConfirm(10, kindValue);
+            checkConfirm(14, 50);
+        }
+        
+    }
 }
 
 function handleSubmit(event) {
