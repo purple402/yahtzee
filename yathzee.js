@@ -1,7 +1,7 @@
 const dice = document.querySelectorAll('input');
 const form = document.querySelector('form');
 const firstGame = document.querySelectorAll('[data-game-01]');
-let diceValue = {};
+let diceValue = [];
 let upperSubtotal = null;
 let lowerSubtotal = null;
 let total = null;
@@ -111,9 +111,10 @@ function handleSubmit(event) {
 
     for(let i=0; i < 5; i++){
         let value = parseInt(event.target[i].value);
-
-        diceValue[i] = value;
+        diceValue.push(value);
     }
+
+    diceValue.sort();
     makeScore();
 }
 
