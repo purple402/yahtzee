@@ -41,42 +41,83 @@ function checkConfirm(i, score){
 // 점수 계산
 function makeScore() {
     //upper section
-    let aces = 0;
-    let twos = 0;
-    let threes = 0;
-    let fours = 0;
-    let fives = 0;
-    let sixes = 0;
+    /*
+    let ace = 0;
+    let two = 0;
+    let three = 0;
+    let four = 0;
+    let five = 0;
+    let six = 0;
 
     for (let i=0; i<5; i++){
         switch(diceValue[i]) {
             case 1 :
-                aces = aces + 1;
+                ace = ace + 1;
                 break;
             case 2 :
-                twos = twos + 2;
+                two = two + 1;
                 break;
             case 3 :
-                threes = threes + 3;
+                three = three + 1;
                 break;
             case 4 :
-                fours = fours + 4;
+                four = four + 1;
                 break;
             case 5 :
-                fives = fives + 5;
+                five = five + 1;
                 break;
             case 6 :
-                sixes = sixes + 6;
+                six = six + 1;
+                break;
+        }
+    }
+    checkConfirm(0, ace);
+    checkConfirm(1, two*2);
+    checkConfirm(2, three*3);
+    checkConfirm(3, four*4);
+    checkConfirm(4, five*5);
+    checkConfirm(5, six*6);
+    */
+   
+    // 반복되는 횟수 세기
+    let count = {
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+        6: 0
+    };
+
+    for (let i=0; i<5; i++){
+        switch(diceValue[i]) {
+            case 1 :
+                count[1] = count[1] + 1;
+                break;
+            case 2 :
+                count[2] = count[2] + 1;
+                break;
+            case 3 :
+                count[3] = count[3] + 1;
+                break;
+            case 4 :
+                count[4] = count[4] + 1;
+                break;
+            case 5 :
+                count[5] = count[5] + 1;
+                break;
+            case 6 :
+                count[6] = count[6] + 1;
                 break;
         }
     }
     
-    checkConfirm(0, aces);
-    checkConfirm(1, twos);
-    checkConfirm(2, threes);
-    checkConfirm(3, fours);
-    checkConfirm(4, fives);
-    checkConfirm(5, sixes);
+    checkConfirm(0, count[1]);
+    checkConfirm(1, count[2]*2);
+    checkConfirm(2, count[3]*3);
+    checkConfirm(3, count[4]*4);
+    checkConfirm(4, count[5]*5);
+    checkConfirm(5, count[6]*6);
 
     // lower section
     // chance
