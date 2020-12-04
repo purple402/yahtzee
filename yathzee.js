@@ -25,6 +25,7 @@ function countTotal(div){
     }
 
     total = upperSubtotal + lowerSubtotal;
+    firstGame[17].innerText = total;
 }
 
 // 확정된 점수는 변화시키지 않음
