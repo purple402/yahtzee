@@ -15,12 +15,13 @@ function countTotal(div){
         }
     }
     firstGame[6].innerText = upperSubtotal;
+    console.log(upperSubtotal);
     
     // check bonus
-    if (subtotal > 62) {
+    if (upperSubtotal > 62) {
         firstGame[7].innerText = '+ 35';
         firstGame[7].classList.remove('bonus')
-    } else if (subtotal <= 62) {
+    } else if (upperSubtotal <= 62) {
         firstGame[7].innerText = upperSubtotal - 63;
     }
 
