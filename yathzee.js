@@ -144,6 +144,10 @@ function makeScore() {
             checkConfirm(9, kindValue);
             checkConfirm(10, kindValue);
             checkConfirm(14, 50);
+        } else {
+            checkConfirm(9, 0);
+            checkConfirm(10, 0);
+            checkConfirm(14, 0);
         }
         
     }
