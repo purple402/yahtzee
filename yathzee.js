@@ -16,14 +16,17 @@ let total = null;
 const CONFIRM = 'confirmed';
 
 function countTotal(div){
-    // subtotal 계산
-    for(let i=0; i<5; i++){
+    // upperSubtotal 계산
+    for(let i=0; i<6; i++){
         if(firstGame[i].classList.contains(CONFIRM)){
             upperSubtotal = upperSubtotal + parseInt(firstGame[i].innerText);
         }
+        firstGame[6].innerText = upperSubtotal;
     }
-    firstGame[6].innerText = upperSubtotal;
-    console.log(upperSubtotal);
+    if (upperSubtotal === null){
+        firstGame[6].innerText = 0;
+        console.log(upperSubtotal);
+    }
     
     // check bonus
     if (upperSubtotal > 62) {
