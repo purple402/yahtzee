@@ -68,6 +68,9 @@ function checkConfirm(i, score){
     }
 }
 
+function resetValues() {
+    diceValue = [];
+    count = {
         1: 0,
         2: 0,
         3: 0,
@@ -75,6 +78,9 @@ function checkConfirm(i, score){
         5: 0,
         6: 0
     };
+    return;
+}
+
 
     for (let i=0; i<5; i++){
         switch(diceValue[i]) {
