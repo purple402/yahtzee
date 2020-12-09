@@ -32,6 +32,7 @@ function countTotal(div){
     if (upperSubtotal > 62) {
         firstGame[7].innerText = '+ 35';
         firstGame[7].classList.remove('bonus')
+        firstGame[7].classList.add(CONFIRM);
     } else if (upperSubtotal <= 62) {
         firstGame[7].innerText = upperSubtotal - 63;
     }
