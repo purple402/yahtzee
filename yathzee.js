@@ -2,6 +2,14 @@ const dice = document.querySelectorAll('input');
 const form = document.querySelector('form');
 const firstGame = document.querySelectorAll('[data-game-01]');
 let diceValue = [];
+let count = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+    6: 0
+};
 let upperSubtotal = null;
 let lowerSubtotal = null;
 let total = null;
