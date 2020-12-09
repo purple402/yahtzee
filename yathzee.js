@@ -81,6 +81,7 @@ function resetValues() {
     return;
 }
 
+function countNumbers() {
 
     for (let i=0; i<5; i++){
         switch(diceValue[i]) {
@@ -104,6 +105,7 @@ function resetValues() {
                 break;
         }
     }
+}
     
     checkConfirm(0, count[1]);
     checkConfirm(1, count[2]*2);
