@@ -37,6 +37,17 @@ function countTotal(div){
         firstGame[7].innerText = upperSubtotal - 63;
     }
 
+    // lowerSubtotal 계산
+    for(let i=8; i<16; i++){
+        if(firstGame[i].classList.contains(CONFIRM)){
+            lowerSubtotal = lowerSubtotal + parseInt(firstGame[i].innerText);
+        }
+        firstGame[16].innerText = lowerSubtotal;
+    }
+    if (lowerSubtotal === null){
+        firstGame[16].innerText = 0;
+    }
+
     total = upperSubtotal + lowerSubtotal;
     firstGame[17].innerText = total;
 }
