@@ -106,7 +106,12 @@ function countNumbers() {
         }
     }
 }
+// 점수 계산
+function makeScore() {
+    // 반복되는 횟수 세기
+    countNumbers();
     
+    // upper section
     checkConfirm(0, count[1]);
     checkConfirm(1, count[2]*2);
     checkConfirm(2, count[3]*3);
