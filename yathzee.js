@@ -48,8 +48,14 @@ function countTotal(div){
         firstGame[16].innerText = 0;
     }
 
+    //total 계산
     total = upperSubtotal + lowerSubtotal;
     firstGame[17].innerText = total;
+
+    // reset
+    upperSubtotal = null;
+    lowerSubtotal = null;
+    total = null;
 }
 
 // 확정된 점수는 변화시키지 않음
