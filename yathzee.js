@@ -68,49 +68,6 @@ function checkConfirm(i, score){
     }
 }
 
-// 점수 계산
-function makeScore() {
-    //upper section
-    /*
-    let ace = 0;
-    let two = 0;
-    let three = 0;
-    let four = 0;
-    let five = 0;
-    let six = 0;
-
-    for (let i=0; i<5; i++){
-        switch(diceValue[i]) {
-            case 1 :
-                ace = ace + 1;
-                break;
-            case 2 :
-                two = two + 1;
-                break;
-            case 3 :
-                three = three + 1;
-                break;
-            case 4 :
-                four = four + 1;
-                break;
-            case 5 :
-                five = five + 1;
-                break;
-            case 6 :
-                six = six + 1;
-                break;
-        }
-    }
-    checkConfirm(0, ace);
-    checkConfirm(1, two*2);
-    checkConfirm(2, three*3);
-    checkConfirm(3, four*4);
-    checkConfirm(4, five*5);
-    checkConfirm(5, six*6);
-    */
-   
-    // 반복되는 횟수 세기
-    let count = {
         1: 0,
         2: 0,
         3: 0,
