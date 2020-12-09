@@ -180,5 +180,10 @@ function init(){
     firstGame.forEach(div => {
         div.addEventListener('click', clicked)
     })
+    firstGame[6].removeEventListener('click', clicked);
+    firstGame[7].removeEventListener('click', clicked);
+    firstGame[15].removeEventListener('click', clicked);
+    firstGame[16].removeEventListener('click', clicked);
+    firstGame[17].removeEventListener('click', clicked);
 }
 init();
