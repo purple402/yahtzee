@@ -9,6 +9,7 @@ let count = {
     5: 0,
     6: 0
 };
+let yahtzeeCount = 0;
 let upperSubtotal = null;
 let lowerSubtotal = null;
 let total = null;
@@ -164,6 +165,27 @@ function makeScore() {
             checkConfirm(9, chance);
             checkConfirm(10, chance);
             checkConfirm(14, 0);
+            break;
+        case 5:
+            // check yahtzee bonus
+            if(gameScore[14].classList.contains(CONFIRM)){
+                if(yahtzeeCount !== 0){
+                // more than second
+                checkConfirm(9, chance);
+                checkConfirm(10, chance);
+                checkConfirm(15, 100*yahtzeeCount);
+                yahtzeeCount += 1;
+                } else {
+                // secondtime but didn't check yahtzee at firstTime
+                checkConfirm(9, chance);
+                checkConfirm(10, chance);
+                }
+            } else {
+                // firstTime
+                checkConfirm(9, chance);
+                checkConfirm(10, chance);
+                checkConfirm(14, 50);
+            }
             break;
         default:
             checkConfirm(9, 0);
