@@ -134,12 +134,19 @@ function makeScore() {
     }
     checkConfirm(8, chance);
 
-    // 3 of a kind
-    // count 에 값이 있으면 => 실행으로 바꿔야함
-    for(let i=1; i<7; i++){
-        let kindValue = count[i]*i;
         if(count[i] === 3){
             checkConfirm(9, kindValue);
+    // 3 of a kind, 4 of a kind, yathzee
+    // 많이 나온 주사위 찾기
+    let sortObj = [];
+    for (let number in count) {
+        sortObj.push([number, count[number]]);
+    }
+    // value 큰 순서대로 정렬
+    sortObj.sort(function(a, b) {
+        return b[1] - a[1];
+    })
+    let largestCount = sortObj[0][1];
             checkConfirm(10, 0);
             checkConfirm(14, 0);
         } else if(count[i] === 4){
