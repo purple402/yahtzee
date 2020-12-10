@@ -10,6 +10,7 @@ let count = {
     5: 0,
     6: 0
 };
+let yathzeeCount = 0;
 let upperSubtotal = null;
 let lowerSubtotal = null;
 let total = null;
@@ -113,6 +114,7 @@ function countNumbers() {
         }
     }
 }
+
 // 점수 계산
 function makeScore() {
     // 반복되는 횟수 세기
