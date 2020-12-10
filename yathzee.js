@@ -188,6 +188,16 @@ function makeScore() {
     
     // straight
     let checkStraight = false;
+    // L.straight
+    // https://slee2540.tistory.com/49 object를 JSON.stringify 통해 비교해야한다
+    const lgStraight = [
+        [1, 2, 3, 4, 5], [2, 3, 4, 5, 6]
+    ];
+    for(let i=0; i<2; i++){
+        if (JSON.stringify(diceValue) === JSON.stringify(lgStraight[i])){
+            checkConfirm(12, 30);
+            checkConfirm(13, 40);
+            checkStraight = true;
         }
         
     // straight 아닌 경우
