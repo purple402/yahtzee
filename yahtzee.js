@@ -263,6 +263,16 @@ function clicked(event) {
         dice[i].value = '';
     }
 
+    // 점수 비우기 & game 종료 확인(nextGame)
+    let nextGame = 0;
+    for(let i=0; i<15; i++){
+    if(!gameScore[i].classList.contains(CONFIRM) && !gameScore[i].classList.contains('total')) {
+        gameScore[i].innerText = '';
+        } else {
+            // 모든 칸이 채워지면 nextGame = 15가 된다
+            nextGame += 1;
+        }
+    }
 function init(){
     // submit 한 value 처리
     form.addEventListener("submit", handleSubmit);
