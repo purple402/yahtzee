@@ -195,6 +195,7 @@ function handleSubmit(event) {
 
     diceValue.sort();
     makeScore();
+    resetValues();
 }
 
 function clicked(event) {
