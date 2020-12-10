@@ -14,6 +14,7 @@ let yahtzeeCount = 0;
 let upperSubtotal = null;
 let lowerSubtotal = null;
 let total = null;
+let gameCount = 1;
 const CONFIRM = 'confirmed';
 
 function countTotal(div){
@@ -270,10 +271,27 @@ function clicked(event) {
     if(!gameScore[i].classList.contains(CONFIRM) && !gameScore[i].classList.contains('total')) {
         gameScore[i].innerText = '';
         } else {
-            // 모든 칸이 채워지면 nextGame = 15가 된다
             nextGame += 1;
         }
     }
+    // 모든 칸이 채워지면 nextGame = 15가 된다
+    // 다음 열으로 이동
+    if (nextGame === 15) {
+        gameCount += 1;
+        switch(gameCount){
+            case 2: 
+            gameScore = document.querySelectorAll('[data-game-02]');
+            break;
+            case 3:
+            gameScore = document.querySelectorAll('[data-game-03]');
+            break;
+            case 4:
+            break;
+        }
+    }
+}
+
+
 function init(){
     // submit 한 value 처리
     form.addEventListener("submit", handleSubmit);
