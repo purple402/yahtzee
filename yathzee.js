@@ -186,8 +186,16 @@ function makeScore() {
         checkConfirm(11, 0);
     }
     
+    // straight
+    let checkStraight = false;
         }
         
+    // straight 아닌 경우
+    if (checkStraight === true){
+        checkStraight = false;
+    } else if (checkStraight === false) {
+        checkConfirm(12, 0);
+        checkConfirm(13, 0);
     }
 }
 
