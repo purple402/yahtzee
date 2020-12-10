@@ -236,6 +236,11 @@ function clicked(event) {
     // 다시 클릭하지 못하게 함
     div.removeEventListener('click', clicked);
     
+    // input 비우기
+    for(let i=0; i<5; i++){
+        dice[i].value = '';
+    }
+
 function init(){
     // submit 한 value 처리
     form.addEventListener("submit", handleSubmit);
