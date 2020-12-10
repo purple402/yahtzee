@@ -1,15 +1,18 @@
+form {
+  margin: 5px;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 150px repeat(3, 80px);
-  font-size: 20px;
+  font-size: 18px;
   align-items: stretch;
-  justify-items: stretch;
-  grid-template-rows: repeat(9, 50px);
+  grid-template-rows: repeat(9, 43px);
   margin-bottom: 5px;
 }
 
 .score-total {
-  grid-template-rows: 70px;
+  grid-template-rows: 50px;
 }
 
 .grid-container > div {
@@ -20,7 +23,6 @@
 }
 
 .categories {
-  justify-content: flex-start;
   color: rgba(0, 0, 0, 1);
 }
 
@@ -45,6 +47,22 @@
 }
 
 .bonus {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.5);
   font-size: 15px;
+}
+
+.description {
+  font-size: 16px;
+}
+
+i {
+  margin-right: 5px;
+}
+
+.description i {
+  margin-left: 5px;
+}
+
+.gameNumber {
+  font-size: 16px;
 }
