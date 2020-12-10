@@ -1,5 +1,6 @@
 const dice = document.querySelectorAll('input');
 const form = document.querySelector('form');
+const gameNumber = document.querySelectorAll('.gameNumber');
 let gameScore = document.querySelectorAll('[data-game-01]');
 let diceValue = [];
 let count = {
@@ -280,12 +281,17 @@ function clicked(event) {
         gameCount += 1;
         switch(gameCount){
             case 2: 
+            gameNumber[0].classList.remove(CONFIRM);
+            gameNumber[1].classList.add(CONFIRM);
             gameScore = document.querySelectorAll('[data-game-02]');
             break;
             case 3:
+            gameNumber[1].classList.remove(CONFIRM);
+            gameNumber[2].classList.add(CONFIRM);
             gameScore = document.querySelectorAll('[data-game-03]');
             break;
             case 4:
+            gameNumber[2].classList.remove(CONFIRM);
             break;
         }
     }
