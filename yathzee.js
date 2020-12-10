@@ -199,7 +199,20 @@ function makeScore() {
             checkConfirm(13, 40);
             checkStraight = true;
         }
-        
+    }
+    
+    // S.straight
+    let newArray = Array.from(new Set(diceValue));
+    const smStraight = [
+        [1, 2, 3, 4], [1, 2, 3, 4, 6], [2, 3, 4, 5], [1, 3, 4, 5, 6], [3, 4, 5, 6]
+    ];
+    for(let i=0; i<5; i++){
+        if (JSON.stringify(newArray) === JSON.stringify(smStraight[i])) {
+            checkConfirm(12, 30);
+            checkConfirm(13, 0);
+            checkStraight = true;
+        }
+    }
     // straight 아닌 경우
     if (checkStraight === true){
         checkStraight = false;
