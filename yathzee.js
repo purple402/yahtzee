@@ -90,7 +90,6 @@ function resetValues() {
 }
 
 function countNumbers() {
-
     for (let i=0; i<5; i++){
         switch(diceValue[i]) {
             case 1 :
@@ -180,6 +179,13 @@ function makeScore() {
             break;
     }
 
+    // full house
+    if (largestCount === 3 && sortObj[1][1] === 2) {
+        checkConfirm(11, 25);
+    } else {
+        checkConfirm(11, 0);
+    }
+    
         }
         
     }
