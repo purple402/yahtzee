@@ -5,13 +5,9 @@
   align-items: stretch;
   justify-items: stretch;
   grid-template-rows: repeat(9, 50px);
+  margin-bottom: 5px;
 }
-/*
-.score-upper,
-.score-lower {
-  grid-template-rows: repeat(9, 50px);
-}
-*/
+
 .score-total {
   grid-template-rows: 70px;
 }
