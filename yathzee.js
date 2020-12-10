@@ -134,8 +134,6 @@ function makeScore() {
     }
     checkConfirm(8, chance);
 
-        if(count[i] === 3){
-            checkConfirm(9, kindValue);
     // 3 of a kind, 4 of a kind, yathzee
     // 많이 나온 주사위 찾기
     let sortObj = [];
@@ -147,20 +145,39 @@ function makeScore() {
         return b[1] - a[1];
     })
     let largestCount = sortObj[0][1];
+    switch(largestCount){
+        case 3:
+            checkConfirm(9, chance);
             checkConfirm(10, 0);
             checkConfirm(14, 0);
-        } else if(count[i] === 4){
-            checkConfirm(9, kindValue);
-            checkConfirm(10, kindValue);
+            break;
+        case 4:
+            checkConfirm(9, chance);
+            checkConfirm(10, chance);
             checkConfirm(14, 0);
-        } else if(count[i] === 5){
-            checkConfirm(9, kindValue);
-            checkConfirm(10, kindValue);
-            checkConfirm(14, 50);
-        } else {
+            break;
+        case 5:
+            // check yathzee bonus
+            if(firstGame[14].classList.contains(CONFIRM)) {
+                // more than second
+                yathzeeCount = yathzeeCount +1;
+                checkConfirm(9, chance);
+                checkConfirm(10, chance);
+                checkConfirm(15, 100*yathzeeCount);
+            } else {
+                // firstTime
+                checkConfirm(9, chance);
+                checkConfirm(10, chance);
+                checkConfirm(14, 50);
+            } 
+            break;
+        default:
             checkConfirm(9, 0);
             checkConfirm(10, 0);
             checkConfirm(14, 0);
+            break;
+    }
+
         }
         
     }
