@@ -192,7 +192,6 @@ function handleSubmit(event) {
         let value = parseInt(event.target[i].value);
         diceValue.push(value);
     }
-
     diceValue.sort();
     makeScore();
     resetValues();
