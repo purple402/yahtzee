@@ -25,11 +25,10 @@ function countTotal(div){
             // 점수 없는 곳은 removeEventListener
             firstGame[i].removeEventListener('click', clicked);
         }
-        firstGame[6].innerText = upperSubtotal;
     }
+    firstGame[6].innerText = upperSubtotal;
     if (upperSubtotal === null){
         firstGame[6].innerText = 0;
-        console.log(upperSubtotal);
     }
     
     // check bonus
@@ -42,14 +41,21 @@ function countTotal(div){
     }
 
     // lowerSubtotal 계산
-    for(let i=8; i<16; i++){
+    for(let i=8; i<15; i++){
         if(firstGame[i].classList.contains(CONFIRM)){
             lowerSubtotal = lowerSubtotal + parseInt(firstGame[i].innerText);
         } else {
             firstGame[i].removeEventListener('click', clicked);
         }
-        firstGame[16].innerText = lowerSubtotal;
     }
+
+    // yathzee bonus 확인
+    if(firstGame[15].innerText !== ''){
+        lowerSubtotal = lowerSubtotal + parseInt(firstGame[15].innerText);
+    }
+
+    firstGame[16].innerText = lowerSubtotal;
+
     if (lowerSubtotal === null){
         firstGame[16].innerText = 0;
     }
