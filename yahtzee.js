@@ -1,5 +1,6 @@
 const dice = document.querySelectorAll('input');
 const form = document.querySelector('form');
+let gameScore = document.querySelectorAll('[data-game-01]');
 let diceValue = [];
 let count = {
     1: 0,
