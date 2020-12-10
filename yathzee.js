@@ -20,6 +20,9 @@ function countTotal(div){
     for(let i=0; i<6; i++){
         if(firstGame[i].classList.contains(CONFIRM)){
             upperSubtotal = upperSubtotal + parseInt(firstGame[i].innerText);
+        } else {
+            // 점수 없는 곳은 removeEventListener
+            firstGame[i].removeEventListener('click', clicked);
         }
         firstGame[6].innerText = upperSubtotal;
     }
@@ -41,6 +44,8 @@ function countTotal(div){
     for(let i=8; i<16; i++){
         if(firstGame[i].classList.contains(CONFIRM)){
             lowerSubtotal = lowerSubtotal + parseInt(firstGame[i].innerText);
+        } else {
+            firstGame[i].removeEventListener('click', clicked);
         }
         firstGame[16].innerText = lowerSubtotal;
     }
@@ -65,6 +70,8 @@ function checkConfirm(i, score){
         return;
     } else {
         firstGame[i].innerText = score;
+        // 점수 클릭 할 수 있는 곳만 addEventListener
+        firstGame[i].addEventListener('click', clicked);
     }
 }
 
@@ -175,15 +182,6 @@ function clicked(event) {
 
 function init(){
     // submit 한 value 처리
-    form.addEventListener("submit", handleSubmit)
-    // 숫자를 클릭하면 확정되도록 함
-    firstGame.forEach(div => {
-        div.addEventListener('click', clicked)
-    })
-    firstGame[6].removeEventListener('click', clicked);
-    firstGame[7].removeEventListener('click', clicked);
-    firstGame[15].removeEventListener('click', clicked);
-    firstGame[16].removeEventListener('click', clicked);
-    firstGame[17].removeEventListener('click', clicked);
+    form.addEventListener("submit", handleSubmit);
 }
 init();
