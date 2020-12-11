@@ -37,7 +37,7 @@ function countTotal(div){
     // check bonus
     if (upperSubtotal > 62) {
         gameScore[7].innerText = '+ 35';
-        gameScore[7].classList.remove('bonus')
+        gameScore[7].classList.remove('bonus');
         gameScore[7].classList.add(CONFIRM);
     } else if (upperSubtotal <= 62) {
         gameScore[7].innerText = upperSubtotal - 63;
@@ -65,6 +65,7 @@ function countTotal(div){
 
     //total 계산
     total = upperSubtotal + lowerSubtotal;
+    //bonus 점수 더하기
     if(gameScore[7].classList.contains(CONFIRM)){
         total += 35;
     }
