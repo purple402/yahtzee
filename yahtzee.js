@@ -18,7 +18,7 @@ let total = null;
 let gameCount = 1;
 const CONFIRM = 'confirmed';
 
-function countTotal(div){
+function countTotal(){
     // upperSubtotal 계산
     for(let i=0; i<6; i++){
         if(gameScore[i].classList.contains(CONFIRM)){
@@ -257,7 +257,7 @@ function clicked(event) {
     const div = event.target;
 
     div.classList.add(CONFIRM);
-    countTotal(div);
+    countTotal();
     
     // 다시 클릭하지 못하게 함
     div.removeEventListener('click', clicked);
