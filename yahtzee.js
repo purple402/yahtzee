@@ -277,6 +277,7 @@ function clicked(event) {
         }
     }
     // 모든 칸이 채워지면 nextGame = 15가 된다
+    // 새로운 게임 시작
     // 다음 열으로 이동
     if (nextGame === 15) {
         gameCount += 1;
