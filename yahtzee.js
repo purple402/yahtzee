@@ -253,6 +253,26 @@ function handleSubmit(event) {
     resetValues();
 }
 
+function nextGame(){
+    gameCount += 1;
+    // 다음 열으로 이동
+    switch(gameCount){
+        case 2: 
+        gameNumber[0].classList.remove(CONFIRM);
+        gameNumber[1].classList.add(CONFIRM);
+        gameScore = document.querySelectorAll('[data-game-02]');
+        break;
+        case 3:
+        gameNumber[1].classList.remove(CONFIRM);
+        gameNumber[2].classList.add(CONFIRM);
+        gameScore = document.querySelectorAll('[data-game-03]');
+        break;
+        case 4:
+        gameNumber[2].classList.remove(CONFIRM);
+        break;
+    }
+}
+
 function clicked(event) {
     const div = event.target;
 
@@ -278,24 +298,8 @@ function clicked(event) {
     }
     // 모든 칸이 채워지면 nextGame = 15가 된다
     // 새로운 게임 시작
-    // 다음 열으로 이동
     if (nextGame === 15) {
-        gameCount += 1;
-        switch(gameCount){
-            case 2: 
-            gameNumber[0].classList.remove(CONFIRM);
-            gameNumber[1].classList.add(CONFIRM);
-            gameScore = document.querySelectorAll('[data-game-02]');
-            break;
-            case 3:
-            gameNumber[1].classList.remove(CONFIRM);
-            gameNumber[2].classList.add(CONFIRM);
-            gameScore = document.querySelectorAll('[data-game-03]');
-            break;
-            case 4:
-            gameNumber[2].classList.remove(CONFIRM);
-            break;
-        }
+        nextGame();
     }
 }
 
