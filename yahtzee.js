@@ -1,6 +1,7 @@
 const dice = document.querySelectorAll('input');
 const form = document.querySelector('form');
 const gameNumber = document.querySelectorAll('.gameNumber');
+const nextGameBtn = document.querySelector('[data-next-game]');
 let gameScore = document.querySelectorAll('[data-game-01]');
 let diceValue = [];
 let count = {
@@ -307,5 +308,6 @@ function clicked(event) {
 function init(){
     // submit 한 value 처리
     form.addEventListener("submit", handleSubmit);
+    nextGameBtn.addEventListener("click", nextGame);
 }
 init();
