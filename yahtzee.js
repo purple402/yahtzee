@@ -85,6 +85,7 @@ function checkConfirm(i, score){
         return;
     } else {
         gameScore[i].innerText = score;
+        gameScore[i].classList.add('active');
         // 점수 클릭 할 수 있는 곳만 addEventListener
         gameScore[i].addEventListener('click', clicked);
     }
@@ -282,6 +283,7 @@ function clicked(event) {
     
     // 다시 클릭하지 못하게 함
     div.removeEventListener('click', clicked);
+    gameScore.forEach(div => div.classList.remove('active'));    
     
     // input 비우기
     for(let i=0; i<5; i++){
