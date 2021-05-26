@@ -106,26 +106,8 @@ function resetValues() {
 
 function countNumbers() {
     for (let i=0; i<5; i++){
-        switch(diceValue[i]) {
-            case 1 :
-                count[1] += 1;
-                break;
-            case 2 :
-                count[2] += 1;
-                break;
-            case 3 :
-                count[3] += 1;
-                break;
-            case 4 :
-                count[4] += 1;
-                break;
-            case 5 :
-                count[5] += 1;
-                break;
-            case 6 :
-                count[6] += 1;
-                break;
-        }
+        number = diceValue[i]
+        count[number] += 1;
     }
 }
 
