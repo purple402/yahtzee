@@ -240,16 +240,19 @@ function nextGame(){
     switch(gameCount){
         case 2: 
         gameNumber[0].classList.remove(CONFIRM);
+        gameScore.forEach(div => div.classList.add(CONFIRM));
         gameNumber[1].classList.add(CONFIRM);
         gameScore = document.querySelectorAll('[data-game-02]');
         break;
         case 3:
         gameNumber[1].classList.remove(CONFIRM);
+        gameScore.forEach(div => div.classList.add(CONFIRM));
         gameNumber[2].classList.add(CONFIRM);
         gameScore = document.querySelectorAll('[data-game-03]');
         break;
         case 4:
         gameNumber[2].classList.remove(CONFIRM);
+        gameScore.forEach(div => div.classList.add(CONFIRM));
         break;
     }
 }
