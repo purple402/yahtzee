@@ -261,6 +261,9 @@ function nextGame(){
     }
 }
 
+function resetScore(){
+}
+
 function clicked(event) {
     const div = event.target;
 
@@ -298,5 +301,6 @@ function init(){
     gameScore = gameScoreSets['first'];
     form.addEventListener("submit", handleSubmit);
     nextGameBtn.addEventListener("click", nextGame);
+    resetBtn.addEventListener("click", resetScore);
 }
 init();
