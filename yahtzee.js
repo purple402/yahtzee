@@ -2,8 +2,12 @@ const dice = document.querySelectorAll('input');
 const form = document.querySelector('form');
 const gameNumber = document.querySelectorAll('.gameNumber');
 const nextGameBtn = document.querySelector('[data-next-game]');
-let gameScore = document.querySelectorAll('[data-game-01]');
 const resetBtn = document.querySelector('[data-reset]');
+const gameScoreSets = {
+    first: document.querySelectorAll('[data-game-01]'),
+    second: document.querySelectorAll('[data-game-02]'),
+    third: document.querySelectorAll('[data-game-03]')
+}
 let diceValue = [];
 let count = {
     1: 0,
@@ -242,13 +246,13 @@ function nextGame(){
         gameNumber[0].classList.remove(CONFIRM);
         gameScore.forEach(div => div.classList.add(CONFIRM));
         gameNumber[1].classList.add(CONFIRM);
-        gameScore = document.querySelectorAll('[data-game-02]');
+        gameScore = gameScoreSets['second'];
         break;
         case 3:
         gameNumber[1].classList.remove(CONFIRM);
         gameScore.forEach(div => div.classList.add(CONFIRM));
         gameNumber[2].classList.add(CONFIRM);
-        gameScore = document.querySelectorAll('[data-game-03]');
+        gameScore = gameScoreSets['third'];
         break;
         case 4:
         gameNumber[2].classList.remove(CONFIRM);
@@ -291,6 +295,7 @@ function clicked(event) {
 
 function init(){
     // submit 한 value 처리
+    gameScore = gameScoreSets['first'];
     form.addEventListener("submit", handleSubmit);
     nextGameBtn.addEventListener("click", nextGame);
 }
