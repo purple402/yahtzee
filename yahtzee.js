@@ -117,13 +117,9 @@ function makeScore() {
     countNumbers();
     
     // upper section
-    checkConfirm(0, count[1]);
-    checkConfirm(1, count[2]*2);
-    checkConfirm(2, count[3]*3);
-    checkConfirm(3, count[4]*4);
-    checkConfirm(4, count[5]*5);
-    checkConfirm(5, count[6]*6);
-
+    for(let i=0; i<6; i++){
+        checkConfirm(i, count[i+1]*(i+1));
+    }
     // lower section
     // chance
     let chance = 0;
