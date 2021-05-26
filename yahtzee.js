@@ -3,6 +3,7 @@ const form = document.querySelector('form');
 const gameNumber = document.querySelectorAll('.gameNumber');
 const nextGameBtn = document.querySelector('[data-next-game]');
 let gameScore = document.querySelectorAll('[data-game-01]');
+const resetBtn = document.querySelector('[data-reset]');
 let diceValue = [];
 let count = {
     1: 0,
