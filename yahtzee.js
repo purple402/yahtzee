@@ -18,13 +18,13 @@ let count = {
     6: 0
 };
 let yahtzeeCount = 0;
-let upperSubtotal = null;
-let lowerSubtotal = null;
-let total = null;
 let gameCount = 1;
 const CONFIRM = 'confirmed';
 
 function countTotal(){
+    let upperSubtotal = null;
+    let lowerSubtotal = null;
+    let total = null;
     // upperSubtotal 계산
     for(let i=0; i<6; i++){
         if(gameScore[i].classList.contains(CONFIRM)){
@@ -76,11 +76,6 @@ function countTotal(){
         total += 35;
     }
     gameScore[17].innerText = total;
-
-    // reset
-    upperSubtotal = null;
-    lowerSubtotal = null;
-    total = null;
 }
 
 // 확정된 점수는 변화시키지 않음
