@@ -230,6 +230,7 @@ function handleSubmit(event) {
 
 function nextGame(){
     gameCount += 1;
+    yahtzeeCount = 0;
     // 다음 열으로 이동
     switch(gameCount){
         case 2: 
