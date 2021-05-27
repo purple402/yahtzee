@@ -46,7 +46,7 @@ function countTotal(){
         gameScore[7].classList.remove('bonus');
         gameScore[7].classList.add(CONFIRM);
     } else if (upperSubtotal <= 62) {
-        gameScore[7].innerText = upperSubtotal - 63;
+        gameScore[7].innerText = `(${upperSubtotal - 63})`;
     }
 
     // lowerSubtotal 계산
