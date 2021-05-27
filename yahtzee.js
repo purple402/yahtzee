@@ -271,17 +271,17 @@ function clicked(event) {
     }
 
     // 점수 비우기 & game 종료 확인(nextGame)
-    let nextGame = 0;
+    let scored = 0;
     for(let i=0; i<15; i++){
     if(!gameScore[i].classList.contains(CONFIRM) && !gameScore[i].classList.contains('total')) {
         gameScore[i].innerText = '';
         } else {
-            nextGame += 1;
+            scored += 1;
         }
     }
-    // 모든 칸이 채워지면 nextGame = 15가 된다
+    // 모든 칸이 채워지면 scored = 15가 된다
     // 새로운 게임 시작
-    if (nextGame === 15) {
+    if (scored === 15) {
         nextGame();
     }
 }
