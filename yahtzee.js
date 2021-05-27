@@ -81,7 +81,10 @@ function countTotal(){
 // 확정된 점수는 변화시키지 않음
 function checkConfirm(i, score){
     //upper section
-    if(gameScore[i].classList.contains(CONFIRM)) {
+    if(i == 15) {
+        // yahtzee bonus는 선택할 수 없지만 점수는 변화함
+        gameScore[i].innerText = score;
+    } else if(gameScore[i].classList.contains(CONFIRM)) {
         return;
     } else {
         gameScore[i].innerText = score;
