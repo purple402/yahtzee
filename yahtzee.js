@@ -234,21 +234,21 @@ function nextGame(){
     // 다음 열으로 이동
     switch(gameCount){
         case 2: 
-        gameNumber[0].classList.remove(CONFIRM);
-        gameScore.forEach(div => div.classList.add(CONFIRM));
-        gameNumber[1].classList.add(CONFIRM);
-        gameScore = gameScoreSets['second'];
-        break;
+            gameNumber[0].classList.remove(CONFIRM);
+            gameScore.forEach(div => div.classList.add(CONFIRM));
+            gameNumber[1].classList.add(CONFIRM);
+            gameScore = gameScoreSets['second'];
+            break;
         case 3:
-        gameNumber[1].classList.remove(CONFIRM);
-        gameScore.forEach(div => div.classList.add(CONFIRM));
-        gameNumber[2].classList.add(CONFIRM);
-        gameScore = gameScoreSets['third'];
-        break;
+            gameNumber[1].classList.remove(CONFIRM);
+            gameScore.forEach(div => div.classList.add(CONFIRM));
+            gameNumber[2].classList.add(CONFIRM);
+            gameScore = gameScoreSets['third'];
+            break;
         case 4:
-        gameNumber[2].classList.remove(CONFIRM);
-        gameScore.forEach(div => div.classList.add(CONFIRM));
-        break;
+            gameNumber[2].classList.remove(CONFIRM);
+            gameScore.forEach(div => div.classList.add(CONFIRM));
+            break;
     }
 }
 
