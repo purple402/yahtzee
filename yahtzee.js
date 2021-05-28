@@ -84,6 +84,7 @@ function checkConfirm(i, score){
     if(i == 15) {
         // yahtzee bonus는 선택할 수 없지만 점수는 변화함
         gameScore[i].innerText = score;
+        // yahtzee bonus = 0일 때 confirm class 추가
         if (score == 0) gameScore[i].classList.add(CONFIRM);
     } else if(gameScore[i].classList.contains(CONFIRM)) {
         return;
