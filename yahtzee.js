@@ -262,6 +262,15 @@ function clicked(event) {
     const div = event.target;
 
     div.classList.add(CONFIRM);
+    // yahtzee를 선택한 경우
+    if(div == gameScore[14]) {
+        // 0이 아닌 경우만 yahtzeeCount를 증가시키고, 0인 경우에는 bonus칸도 0으로 만든다.
+        if(div.innerText !== '0') {
+            ++yahtzeeCount;
+        } else {
+            checkConfirm(15, 0);
+        }
+    }
     countTotal();
     
     // 다시 클릭하지 못하게 함
