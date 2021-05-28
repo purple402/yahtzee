@@ -258,6 +258,24 @@ function nextGame(){
 }
 
 function resetScore(){
+    let reset = confirm("야찌 점수판을 초기화 하시겠습니까?")
+    if(reset){
+        //초기화한다
+        for(const key in gameScoreSets) {
+            gameScoreSets[key].forEach(div => {
+                div.classList.remove(CONFIRM);
+                div.innerText='';
+            })
+        }
+        gameNumber[0].classList.add(CONFIRM);
+        gameNumber[1].classList.remove(CONFIRM);
+        gameNumber[2].classList.remove(CONFIRM);
+        gameScore = gameScoreSets['first'];
+        yahtzeeCount = 0;
+        gameCount = 1;
+    } else {
+        return;
+    }
 }
 
 function clicked(event) {
