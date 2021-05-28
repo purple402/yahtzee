@@ -254,6 +254,9 @@ function nextGame(){
             gameNumber[2].classList.remove(CONFIRM);
             gameScore.forEach(div => div.classList.add(CONFIRM));
             break;
+        case 5:
+            resetScore();
+            break;
     }
 }
 
