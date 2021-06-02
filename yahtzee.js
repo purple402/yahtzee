@@ -17,6 +17,7 @@ let count = {
     5: 0,
     6: 0
 };
+let rollCount = 0;
 let yahtzeeCount = 0;
 let gameCount = 1;
 const CONFIRM = 'confirmed';
@@ -223,6 +224,11 @@ function makeScore() {
 
 function handleSubmit(event) {
     event.preventDefault();
+    
+    if (rollCount == 3) {
+        alert('점수를 선택해 주세요.')
+        return;
+    }
 
     for(let i=0; i < 5; i++){
         let value = parseInt(event.target[i].value);
@@ -231,6 +237,7 @@ function handleSubmit(event) {
     diceValue.sort();
     makeScore();
     resetValues();
+    rollCount++;
 }
 
 function nextGame(){
@@ -283,6 +290,10 @@ function resetScore(){
 
 function clicked(event) {
     const div = event.target;
+
+    rollCount = 0;
+
+    
 
     div.classList.add(CONFIRM);
     // yahtzee를 선택한 경우
