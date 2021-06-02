@@ -224,7 +224,7 @@ function makeScore() {
 
 function handleSubmit(event) {
     event.preventDefault();
-    
+
     if (rollCount == 3) {
         alert('점수를 선택해 주세요.')
         return;
@@ -293,7 +293,10 @@ function clicked(event) {
 
     rollCount = 0;
 
-    
+    if (div.innerText == 0) {
+        let checkZero = confirm("0점을 선택하시겠습니까?")
+        if(!checkZero) return;
+    }
 
     div.classList.add(CONFIRM);
     // yahtzee를 선택한 경우
