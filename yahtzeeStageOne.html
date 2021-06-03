@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleOne.css">
+    <title>Yahtzee</title>
+</head>
+<body>
+    <div>
+        <h1>Yahtzee</h1>
+    </div>
+    <div>
+        <form>
+            <input id="dice_01" type='number' min='1' max='6' required>
+            <input id="dice_02" type='number' min='1' max='6' required>
+            <input id="dice_03" type='number' min='1' max='6' required>
+            <input id="dice_04" type='number' min='1' max='6' required>
+            <input id="dice_05" type='number' min='1' max='6' required>
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    <div class="grid-container score-lower">
+        <!-- upper section -->
+        <div class="categories"><i class="fas fa-dice-one"></i>Aces</div>
+        <div class="categories"><i class="fas fa-dice-two"></i>Deuces</div>
+        <div class="categories"><i class="fas fa-dice-three"></i>Threes</div>
+        <div class="categories"><i class="fas fa-dice-four"></i>Fours</div>
+        <div class="categories"><i class="fas fa-dice-five"></i>Fives</div>
+        <div class="categories"><i class="fas fa-dice-six"></i>Sixes</div>
+        <div class="categories">Sub Total</div>
+        <div class="categories"><span>Bonus</span></div>
+        <div class="score" data-game-score></div>
+        <div class="score" data-game-score></div>
+        <div class="score" data-game-score></div>
+        <div class="score" data-game-score></div>
+        <div class="score" data-game-score></div>
+        <div class="score total" data-game-score></div>
+        <div class="score total bonus" data-game-score></div>
+        <div class="score" data-game-score></div>
+        <!-- lower section -->
+        <div class="categories">3 of a Kind</div>
+        <div class="categories">4 of a Kind</div>
+        <div class="categories">Full House</div>
+        <div class="categories">S. Straight</div>
+        <div class="categories">L. Straight</div>
+        <div class="categories">Yahtzee</div>
+        <div class="categories">Chance</div>
+        <div class="categories">Lower Total</div>
+        <div class="score" data-game-score></div>
+        <div class="score" data-game-score></div>
+        <div class="score" data-game-score></div>
+        <div class="score" data-game-score></div>
+        <div class="score" data-game-score></div>
+        <div class="score" data-game-score></div>
+        <div class="score total" data-game-score></div>
+        <div class="score total" data-game-score></div>
+    </div>
+
+    <span class="description">Bonus if <i class="fas fa-dice-one"></i>-<i class="fas fa-dice-six"></i> are over 63 points</span>
+    <div class="description">Yahtzee bonus if Yahtzee box is already filled</div>
+    <div class="description">(100 points for each additional Yahtzee)</div>
+
+    <div class="grid-container score-total">
+        <div class="categories">Total</div>
+        <div class="score total" data-game-score></div>
+    </div>
+
+    <button type="submit" data-next-game>Next Game</button>
+    <button type="submit" data-reset>Reset</button>
+</body>
+
+<script
+      src="https://kit.fontawesome.com/6478f529f2.js"
+      crossorigin="anonymous"
+    ></script>
+<script src="yahtzee.js"></script>
+</html>
