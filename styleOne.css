@@ -1,0 +1,30 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 150px 80px 150px 80px;
+    font-size: 18px;
+    align-items: stretch;
+    grid-template-rows: repeat(8, 43px);
+    margin-bottom: 5px;
+    grid-auto-flow: column;
+  }
+
+  .score-total {
+    grid-template-rows: 50px;
+  }
+
+  .grid-container > div {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+  }
+
+  form {
+    margin: 10px 0px;
+  }
+
+  form input {
+    width: 30px;
+    height: 25px;
+    font-size: 20px;
+  }
