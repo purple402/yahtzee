@@ -45,6 +45,14 @@ function calculateScore() {
         showScore(i, diceCount[i+1]*(i+1));
     }
 
+    // lower section
+    // chance
+    let chance = 0;
+    for(let i=0; i<5; i++){
+        chance += diceValue[i];
+    }
+    showScore(14, chance);
+
 }
 
 function handleSubmit(event){
