@@ -23,6 +23,15 @@ function handleSubmit(event){
         return;
     }
 
+    // 주사위 점수 입력
+    for(let i=0; i<5; i++){
+        let value = parseInt(event.target[i].value);
+        diceValue.push(value);
+    }
+    diceValue.sort();
+    
+    // reset values
+    diceValue = [];
     rollCount++;
 }
 
