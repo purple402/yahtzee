@@ -14,6 +14,19 @@ let diceCount = {
 let rollCount = 0;
 const FILLED = 'filled';
 
+function showScore(i, score){
+    const div = gameScore[i];
+    
+    // 이미 점수가 적혀있는 곳인지 확인
+    if(div.classList.contains(FILLED)) {
+        return;
+    } else {
+        div.innerText = score;
+        div.classList.add('active');
+        div.addEventListener('click', chooseScore);
+    }
+}
+
 function calculateScore() {
     // count numbers
     for (let i=0; i<5; i++){
