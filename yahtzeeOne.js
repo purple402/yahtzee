@@ -53,6 +53,36 @@ function calculateScore() {
     }
     showScore(14, chance);
 
+    // 3 of a kind, 4 of a kind, yahtzee
+    // 많이 나온 주사위 눈의 값 찾기
+    let sortObj = [];
+    sortObj = Object.values(diceCount);
+    sortObj.sort(function(a, b){
+        return b - a;
+    });
+    let largestCount = sortObj[0]
+    switch(largestCount){
+        case 3:
+            showScore(8, chance);
+            showScore(9, 0);
+            showScore(13, 0);
+            break;
+        case 4:
+            showScore(8, chance);
+            showScore(9, chance);
+            showScore(13, 0);
+            break;
+        case 5:
+            showScore(8, chance);
+            showScore(9, chance);
+            showScore(13, 50);
+            break;
+        default:
+            showScore(8, 0);
+            showScore(9, 0);
+            showScore(13, 0);
+            break;
+    }
 }
 
 function handleSubmit(event){
