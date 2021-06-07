@@ -14,6 +14,12 @@ let diceCount = {
 let rollCount = 0;
 const FILLED = 'filled';
 
+function chooseScore(event){
+    const div = event.target;
+
+    div.classList.add(FILLED);
+}
+
 function showScore(i, score){
     const div = gameScore[i];
     
