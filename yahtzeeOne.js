@@ -17,6 +17,13 @@ const FILLED = 'filled';
 function handleSubmit(event){
     event.preventDefault();
 
+    // check rollCount
+    if(rollCount == 3) {
+        alert('더 이상 주사위를 굴릴 수 없습니다. 점수를 선택해 주세요.')
+        return;
+    }
+
+    rollCount++;
 }
 
 function init(){
