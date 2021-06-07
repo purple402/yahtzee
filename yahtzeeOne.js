@@ -15,6 +15,12 @@ let rollCount = 0;
 const FILLED = 'filled';
 
 function calculateScore() {
+    // count numbers
+    for (let i=0; i<5; i++){
+        number = diceValue[i];
+        diceCount[number] += 1;
+    }
+
 }
 
 function handleSubmit(event){
