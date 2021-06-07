@@ -14,6 +14,11 @@ let diceCount = {
 let rollCount = 0;
 const FILLED = 'filled';
 
+function handleSubmit(event){
+    event.preventDefault();
+
+}
+
 function init(){
     form.addEventListener('submit', handleSubmit);
 }
