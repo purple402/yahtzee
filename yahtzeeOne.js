@@ -40,6 +40,11 @@ function calculateScore() {
         diceCount[number] += 1;
     }
 
+    // upper section
+    for(let i=0; i<6; i++){
+        showScore(i, diceCount[i+1]*(i+1));
+    }
+
 }
 
 function handleSubmit(event){
