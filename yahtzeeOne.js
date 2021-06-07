@@ -14,6 +14,9 @@ let diceCount = {
 let rollCount = 0;
 const FILLED = 'filled';
 
+function calculateScore() {
+}
+
 function handleSubmit(event){
     event.preventDefault();
 
@@ -29,6 +32,7 @@ function handleSubmit(event){
         diceValue.push(value);
     }
     diceValue.sort();
+    calculateScore();
     
     // reset values
     diceValue = [];
