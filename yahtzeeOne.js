@@ -35,20 +35,20 @@ function showScore(i, score){
 
 function calculateScore() {
     // count numbers
-    for (let i=0; i<5; i++){
+    for(let i=0; i<5; i++) {
         number = diceValue[i];
         diceCount[number] += 1;
     }
 
     // upper section
-    for(let i=0; i<6; i++){
+    for(let i=0; i<6; i++) {
         showScore(i, diceCount[i+1]*(i+1));
     }
 
     // lower section
     // chance
     let chance = 0;
-    for(let i=0; i<5; i++){
+    for(let i=0; i<5; i++) {
         chance += diceValue[i];
     }
     showScore(14, chance);
@@ -57,11 +57,11 @@ function calculateScore() {
     // 많이 나온 주사위 눈의 값 찾기
     let sortObj = [];
     sortObj = Object.values(diceCount);
-    sortObj.sort(function(a, b){
+    sortObj.sort(function(a, b) {
         return b - a;
     });
     let largestCount = sortObj[0]
-    switch(largestCount){
+    switch(largestCount) {
         case 3:
             showScore(8, chance);
             showScore(9, 0);
@@ -95,7 +95,7 @@ function handleSubmit(event){
     }
 
     // 주사위 점수 입력
-    for(let i=0; i<5; i++){
+    for(let i=0; i<5; i++) {
         let value = parseInt(event.target[i].value);
         diceValue.push(value);
     }
