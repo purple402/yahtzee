@@ -84,6 +84,14 @@ function calculateScore() {
             showScore(13, 0);
             break;
     }
+
+    // full house
+    if(largestCount === 3 && sortObj[1] === 2) {
+        showScore(10, 25);
+    } else {
+        showScore(10, 0);
+    }
+
 }
 
 function handleSubmit(event){
