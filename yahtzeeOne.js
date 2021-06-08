@@ -3,14 +3,6 @@ const form = document.querySelector('form');
 const dice = form.querySelectorAll('input');
 const resetBtn = document.querySelector('[data-reset]');
 let diceValue = [];
-let diceCount = {
-    1: 0,
-    2: 0,
-    3: 0,
-    4: 0,
-    5: 0,
-    6: 0
-};
 let rollCount = 0;
 const FILLED = 'filled';
 
@@ -34,6 +26,15 @@ function showScore(i, score){
 }
 
 function calculateScore() {
+    let diceCount = {
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+        6: 0
+    };
+
     // count numbers
     for(let i=0; i<5; i++) {
         number = diceValue[i];
