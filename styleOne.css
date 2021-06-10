@@ -37,3 +37,9 @@ form input {
 .active {
   cursor: pointer;
 }
+
+.filled {
+  color: black;
+  background-color: rgba(49, 49, 230, 0.212);
+  font-weight: bold;
+}
