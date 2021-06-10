@@ -85,6 +85,17 @@ function calculateScore() {
         showScore(10, 0);
     }
 
+    // straight
+    // L.straight
+    const lgStraight = [
+        [1, 2, 3, 4, 5], [2, 3, 4, 5, 6]
+    ];
+    for(let i=0; i<2; i++) {
+        if(JSON.stringify(diceValue) === JSON.stringify(lgStraight[i])) {
+            showScore(11, 30);
+            showScore(12, 40);
+        }
+    }
 }
 
 function handleSubmit(event){
