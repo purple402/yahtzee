@@ -95,6 +95,7 @@ function calculateScore() {
         if(JSON.stringify(diceValue) === JSON.stringify(lgStraight[i])) {
             showScore(11, 30);
             showScore(12, 40);
+            checkStraight = true;
         }
     }
     // S.straight
@@ -102,10 +103,13 @@ function calculateScore() {
     const smStraight = [
         [1, 2, 3, 4], [1, 2, 3, 4, 6], [1, 3, 4, 5, 6], [2, 3, 4, 5], [3, 4, 5, 6]
     ];
-    for(let i=0; i<5; i++) {
-        if(JSON.stringify(setDiceValue) === JSON.stringify(smStraight[i])) {
-            showScore(11, 30);
-            showScore(12, 0);
+    if(!checkStraight) {
+        for(let i=0; i<5; i++) {
+            if(JSON.stringify(setDiceValue) === JSON.stringify(smStraight[i])) {
+                showScore(11, 30);
+                showScore(12, 0);
+                checkStraight = true;
+            }
         }
     }
 }
