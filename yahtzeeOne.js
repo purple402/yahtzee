@@ -4,6 +4,7 @@ const dice = form.querySelectorAll('input');
 const resetBtn = document.querySelector('[data-reset]');
 let diceValue = [];
 let rollCount = 0;
+const ACTIVE = 'active';
 const FILLED = 'filled';
 
 function chooseScore(event){
@@ -20,7 +21,7 @@ function showScore(i, score){
         return;
     } else {
         div.innerText = score;
-        div.classList.add('active');
+        div.classList.add(ACTIVE);
         div.addEventListener('click', chooseScore);
     }
 }
