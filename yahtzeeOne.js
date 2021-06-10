@@ -26,24 +26,17 @@ function showScore(i, score){
 }
 
 function calculateScore() {
-    let diceCount = {
-        1: 0,
-        2: 0,
-        3: 0,
-        4: 0,
-        5: 0,
-        6: 0
-    };
+    let diceCount = [0, 0, 0, 0, 0, 0]
 
     // count numbers
     for(let i=0; i<5; i++) {
         number = diceValue[i];
-        diceCount[number] += 1;
+        diceCount[number -1] += 1;
     }
-
+    
     // upper section
     for(let i=0; i<6; i++) {
-        showScore(i, diceCount[i+1]*(i+1));
+        showScore(i, diceCount[i]*(i+1));
     }
 
     // lower section
