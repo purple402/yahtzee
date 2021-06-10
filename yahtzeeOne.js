@@ -112,6 +112,14 @@ function calculateScore() {
             }
         }
     }
+    // Straight 아닌 경우
+    if(checkStraight) {
+        // checkStraight 초기화
+        checkStraight = false;
+    } else {
+        showScore(11, 0);
+        showScore(12, 0);
+    }
 }
 
 function handleSubmit(event){
