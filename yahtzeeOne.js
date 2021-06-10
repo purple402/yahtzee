@@ -49,12 +49,12 @@ function calculateScore() {
 
     // 3 of a kind, 4 of a kind, yahtzee
     // 많이 나온 주사위 눈의 값 찾기
-    let sortObj = [];
-    sortObj = Object.values(diceCount);
-    sortObj.sort(function(a, b) {
+    let sortCount = [];
+    sortCount = Object.values(diceCount);
+    sortCount.sort(function(a, b) {
         return b - a;
     });
-    let largestCount = sortObj[0]
+    let largestCount = sortCount[0]
     switch(largestCount) {
         case 3:
             showScore(8, chance);
@@ -79,7 +79,7 @@ function calculateScore() {
     }
 
     // full house
-    if(largestCount === 3 && sortObj[1] === 2) {
+    if(largestCount === 3 && sortCount[1] === 2) {
         showScore(10, 25);
     } else {
         showScore(10, 0);
