@@ -10,6 +10,7 @@ const FILLED = 'filled';
 function chooseScore(event){
     const div = event.target;
 
+    rollCount = 0;
     div.classList.add(FILLED);
 }
 
