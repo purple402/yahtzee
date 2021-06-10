@@ -96,6 +96,17 @@ function calculateScore() {
             showScore(12, 40);
         }
     }
+    // S.straight
+    let setDiceValue = Array.from(new Set(diceValue));
+    const smStraight = [
+        [1, 2, 3, 4], [1, 2, 3, 4, 6], [1, 3, 4, 5, 6], [2, 3, 4, 5], [3, 4, 5, 6]
+    ];
+    for(let i=0; i<5; i++) {
+        if(JSON.stringify(setDiceValue) === JSON.stringify(smStraight[i])) {
+            showScore(11, 30);
+            showScore(12, 0);
+        }
+    }
 }
 
 function handleSubmit(event){
