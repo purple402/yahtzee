@@ -17,6 +17,10 @@ function chooseScore(event){
         div.removeEventListener('click', chooseScore);
     });
 
+    let scored = 0;
+    for(let i=0; i<13; i++) {
+        gameScore[i].classList.contains(FILLED) ? scored += 1 : gameScore[i].innerText = '';
+    }
 }
 
 function showScore(i, score){
