@@ -47,7 +47,7 @@ function calculateScore() {
     for(let i=0; i<5; i++) {
         chance += diceValue[i];
     }
-    showScore(14, chance);
+    showScore(6, chance);
 
     // 3 of a kind, 4 of a kind, yahtzee
     // 많이 나온 주사위 눈의 값 찾기
@@ -59,32 +59,32 @@ function calculateScore() {
     let largestCount = sortCount[0]
     switch(largestCount) {
         case 3:
-            showScore(8, chance);
-            showScore(9, 0);
-            showScore(13, 0);
+            showScore(7, chance);
+            showScore(8, 0);
+            showScore(12, 0);
             break;
         case 4:
+            showScore(7, chance);
             showScore(8, chance);
-            showScore(9, chance);
-            showScore(13, 0);
+            showScore(12, 0);
             break;
         case 5:
+            showScore(7, chance);
             showScore(8, chance);
-            showScore(9, chance);
-            showScore(13, 50);
+            showScore(12, 50);
             break;
         default:
+            showScore(7, 0);
             showScore(8, 0);
-            showScore(9, 0);
-            showScore(13, 0);
+            showScore(12, 0);
             break;
     }
 
     // full house
     if(largestCount === 3 && sortCount[1] === 2) {
-        showScore(10, 25);
+        showScore(9, 25);
     } else {
-        showScore(10, 0);
+        showScore(9, 0);
     }
 
     // straight
@@ -95,8 +95,8 @@ function calculateScore() {
     ];
     for(let i=0; i<2; i++) {
         if(JSON.stringify(diceValue) === JSON.stringify(lgStraight[i])) {
-            showScore(11, 30);
-            showScore(12, 40);
+            showScore(10, 30);
+            showScore(11, 40);
             checkStraight = true;
         }
     }
@@ -108,8 +108,8 @@ function calculateScore() {
     if(!checkStraight) {
         for(let i=0; i<5; i++) {
             if(JSON.stringify(setDiceValue) === JSON.stringify(smStraight[i])) {
-                showScore(11, 30);
-                showScore(12, 0);
+                showScore(10, 30);
+                showScore(11, 0);
                 checkStraight = true;
             }
         }
@@ -119,8 +119,8 @@ function calculateScore() {
         // checkStraight 초기화
         checkStraight = false;
     } else {
+        showScore(10, 0);
         showScore(11, 0);
-        showScore(12, 0);
     }
 }
 

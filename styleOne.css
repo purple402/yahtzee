@@ -3,7 +3,7 @@
     grid-template-columns: 150px 80px 150px 80px;
     font-size: 16px;
     align-items: stretch;
-    grid-template-rows: repeat(8, 43px);
+    grid-template-rows: repeat(7, 43px);
     margin-bottom: 5px;
     grid-auto-flow: column;
 }
