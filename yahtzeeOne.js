@@ -12,6 +12,11 @@ function chooseScore(event){
 
     rollCount = 0;
     div.classList.add(FILLED);
+    gameScore.forEach(div => {
+        div.classList.remove(ACTIVE);
+        div.removeEventListener('click', chooseScore);
+    });
+
 }
 
 function showScore(i, score){
