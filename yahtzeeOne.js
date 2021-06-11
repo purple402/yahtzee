@@ -21,10 +21,12 @@ function chooseScore(event){
         div.removeEventListener('click', chooseScore);
     });
 
+    // 점수 비우기 & 게임종료 확인
     let scored = 0;
     for(let i=0; i<13; i++) {
         gameScore[i].classList.contains(FILLED) ? scored += 1 : gameScore[i].innerText = '';
     }
+    // 모든 칸이 채워지면 게임을 종료한다
     if(scored === 13) endGame();
 }
 
