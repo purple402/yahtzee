@@ -7,6 +7,10 @@ let rollCount = 0;
 const ACTIVE = 'active';
 const FILLED = 'filled';
 
+function endGame() {
+    console.log('endgame');
+}
+
 function chooseScore(event){
     const div = event.target;
 
@@ -21,6 +25,7 @@ function chooseScore(event){
     for(let i=0; i<13; i++) {
         gameScore[i].classList.contains(FILLED) ? scored += 1 : gameScore[i].innerText = '';
     }
+    if(scored === 13) endGame();
 }
 
 function showScore(i, score){
@@ -157,5 +162,6 @@ function handleSubmit(event){
 
 function init(){
     form.addEventListener('submit', handleSubmit);
+    resetBtn.addEventListener('click', endGame);
 }
 init();
