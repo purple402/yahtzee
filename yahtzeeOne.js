@@ -21,6 +21,10 @@ function chooseScore(event){
     }
 
     rollCount = 0;
+    for(let i=0; i<5; i++) {
+        dice[i].value = '';
+    }
+
     div.classList.add(FILLED);
     gameScore.forEach(div => {
         div.classList.remove(ACTIVE);
