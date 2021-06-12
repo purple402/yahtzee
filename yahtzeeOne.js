@@ -11,6 +11,9 @@ function endGame() {
     console.log('endgame');
 }
 
+function countTotal() {
+}
+
 function chooseScore(event){
     const div = event.target;
 
@@ -30,6 +33,9 @@ function chooseScore(event){
         div.classList.remove(ACTIVE);
         div.removeEventListener('click', chooseScore);
     });
+
+    // 보너스, 합계 계산
+    countTotal();
 
     // 점수 비우기 & 게임종료 확인
     let scored = 0;
