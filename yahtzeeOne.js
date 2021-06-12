@@ -14,6 +14,12 @@ function endGame() {
 function chooseScore(event){
     const div = event.target;
 
+    // 0점 선택한 경우 확인창 띄우기
+    if(div.innerText == 0) {
+        let checkZero = confirm("0점을 선택하시겠습니까?")
+        if (!checkZero) return;
+    }
+
     rollCount = 0;
     div.classList.add(FILLED);
     gameScore.forEach(div => {
