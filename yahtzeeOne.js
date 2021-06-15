@@ -131,9 +131,25 @@ function calculateScore() {
             showScore(12, 0);
             break;
         case 5:
-            showScore(7, chance);
-            showScore(8, chance);
-            showScore(12, 50);
+            // check yahtzee bonus
+            if(gameScore[12].classList.contains(FILLED)) {
+                if(yahtzeeCount !== 0) {
+                    // 이미 yahtzee가 나온 적이 있는 상태
+                    showScore(7, chance);
+                    showScore(8, chance);
+                    gameScore[12].innerText = `${50 + 100*yahtzeeCount}`;
+                    ++yahtzeeCount;
+                } else {
+                    // yahtzee칸을 0으로 채운 상태
+                    showScore(7, chance);
+                    showScore(8, chance);
+                }
+            } else {
+                // 첫 번째 yahtzee
+                showScore(7, chance);
+                showScore(8, chance);
+                showScore(12, 50);
+            }
             break;
         default:
             showScore(7, 0);
