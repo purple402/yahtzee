@@ -6,6 +6,7 @@ const dice = form.querySelectorAll('input');
 const resetBtn = document.querySelector('[data-reset]');
 let diceValue = [];
 let rollCount = 0;
+let yahtzeeCount = 0;
 const ACTIVE = 'active';
 const FILLED = 'filled';
 
@@ -58,6 +59,10 @@ function chooseScore(event){
         div.classList.remove(ACTIVE);
         div.removeEventListener('click', chooseScore);
     });
+
+    if(div === gameScore[12] && div.innerText !== '0') {
+        ++yahtzeeCount;
+    }
 
     // 보너스, 합계 계산
     countTotal();
