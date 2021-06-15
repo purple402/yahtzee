@@ -161,7 +161,7 @@ function makeScore() {
                 checkConfirm(15, 100*yahtzeeCount);
                 ++yahtzeeCount;
                 } else {
-                // second time but didn't check yahtzee at firstTime
+                // already filled yahtzee div with 0 score
                 checkConfirm(9, chance);
                 checkConfirm(10, chance);
                 }
