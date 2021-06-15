@@ -1,5 +1,6 @@
 const gameScore = document.querySelectorAll('[data-score]');
 const upperBonus = document.querySelector('[data-score-bonus]');
+const total = document.querySelector('[data-score-total]');
 const form = document.querySelector('form');
 const dice = form.querySelectorAll('input');
 const resetBtn = document.querySelector('[data-reset]');
@@ -23,6 +24,13 @@ function countTotal() {
     }
     upperBonus.innerText = `(${subTotal - 63})`;
     
+    for(let i=6; i<13; i++) {
+        if(gameScore[i].classList.contains(FILLED)){
+            subTotal += parseInt(gameScore[i].innerText);
+        }
+    }
+    total.innerText = `${subTotal}`;
+
 }
 
 function chooseScore(event){

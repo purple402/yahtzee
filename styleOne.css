@@ -43,3 +43,8 @@ form input {
   background-color: rgba(49, 49, 230, 0.212);
   font-weight: bold;
 }
+
+.total {
+  color: black;
+  font-weight: bold;
+}
