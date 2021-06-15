@@ -22,7 +22,13 @@ function countTotal() {
             subTotal += parseInt(gameScore[i].innerText);
         }
     }
-    upperBonus.innerText = `(${subTotal - 63})`;
+    if(subTotal >= 63) {
+        upperBonus.innerText = '+35';
+        upperBonus.classList.add(FILLED);
+        subTotal += 35;
+    } else {
+        upperBonus.innerText = `(${subTotal - 63})`;
+    }
     
     for(let i=6; i<13; i++) {
         if(gameScore[i].classList.contains(FILLED)){
