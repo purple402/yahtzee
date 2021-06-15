@@ -13,15 +13,15 @@ function endGame() {
 }
 
 function countTotal() {
-    let upperSubTotal = null;
+    let subTotal = null;
     
     // upperSubTotal
     for(let i=0; i<6; i++) {
         if(gameScore[i].classList.contains(FILLED)) {
-            upperSubTotal += parseInt(gameScore[i].innerText);
+            subTotal += parseInt(gameScore[i].innerText);
         }
     }
-    upperBonus.innerText = `(${upperSubTotal - 63})`;
+    upperBonus.innerText = `(${subTotal - 63})`;
     
 }
 
