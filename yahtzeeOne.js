@@ -119,44 +119,6 @@ function calculateScore() {
         return b - a;
     });
     let largestCount = sortCount[0]
-    switch(largestCount) {
-        case 3:
-            showScore(7, chance);
-            showScore(8, 0);
-            showScore(12, 0);
-            break;
-        case 4:
-            showScore(7, chance);
-            showScore(8, chance);
-            showScore(12, 0);
-            break;
-        case 5:
-            // check yahtzee bonus
-            if(gameScore[12].classList.contains(FILLED)) {
-                if(yahtzeeCount !== 0) {
-                    // 이미 yahtzee가 나온 적이 있는 상태
-                    showScore(7, chance);
-                    showScore(8, chance);
-                    gameScore[12].innerText = `${50 + 100*yahtzeeCount}`;
-                    ++yahtzeeCount;
-                } else {
-                    // yahtzee칸을 0으로 채운 상태
-                    showScore(7, chance);
-                    showScore(8, chance);
-                }
-            } else {
-                // 첫 번째 yahtzee
-                showScore(7, chance);
-                showScore(8, chance);
-                showScore(12, 50);
-            }
-            break;
-        default:
-            showScore(7, 0);
-            showScore(8, 0);
-            showScore(12, 0);
-            break;
-    }
 
     // full house
     if(largestCount === 3 && sortCount[1] === 2) {
@@ -199,6 +161,24 @@ function calculateScore() {
     } else {
         showScore(10, 0);
         showScore(11, 0);
+    }
+
+    switch(largestCount) {
+        case 3:
+            showScore(7, chance);
+            showScore(8, 0);
+            showScore(12, 0);
+            break;
+        case 4:
+            showScore(7, chance);
+            showScore(8, chance);
+            showScore(12, 0);
+            break;
+        default:
+            showScore(7, 0);
+            showScore(8, 0);
+            showScore(12, 0);
+            break;
     }
 }
 
