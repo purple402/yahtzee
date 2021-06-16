@@ -174,6 +174,41 @@ function calculateScore() {
             showScore(8, chance);
             showScore(12, 0);
             break;
+        case 5:
+            // check yahtzee bonus
+            // 1. yahtzee칸에 점수가 채워져있는지 확인
+            if(!gameScore[12].classList.contains(FILLED)) {
+                // 비어있는 경우, 첫 번째 yahtzee
+                showScore(7, chance);
+                showScore(8, chance);
+                showScore(12, 50);
+            } else {
+                // yahtzee칸이 0 또는 50으로 이미 기록되어 있을 때
+                // upper section의 해당 칸이 이미 기록되어 있을 때
+                // 두 가지 조건을 모두 만족하면 joker rule가능
+                // 2. yahtzee count 확인
+                if(yahtzeeCount !== 0) {
+                    // yahtzee칸에 50점을 채운 경우 yahtzee bonus 획득 가능
+                    showScore(7, chance);
+                    showScore(8, chance);
+                    gameScore[12].innerText = `${50 + 100*yahtzeeCount}`;
+                    ++yahtzeeCount;
+                } else {
+                    // yahtzee칸을 0으로 채운 상태
+                    showScore(7, chance);
+                    showScore(8, chance);
+                }
+                // 3. upper section 확인
+                number = diceValue[0] -1;
+                if(gameScore[number].classList.contains(FILLED)) {
+                    // 이미 채워져 있는 경우
+                    showScore(9, 25);
+                    showScore(10, 30);
+                    showScore(11, 40);
+                }
+                // upper section 비워져 있는 경우는 이미 위의 코드에서 채워짐
+            }
+            break;
         default:
             showScore(7, 0);
             showScore(8, 0);
