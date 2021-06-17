@@ -14,6 +14,8 @@ function endGame() {
     let checkZero = confirm("점수판을 지우시겠습니까?")
     if (!checkZero) return;
 
+    dice.forEach(input => input.disabled = false)
+
     gameScore.forEach(div => {
         div.classList.remove(FILLED);
         div.innerText = '';
@@ -81,7 +83,9 @@ function chooseScore(event){
         gameScore[i].classList.contains(FILLED) ? scored += 1 : gameScore[i].innerText = '';
     }
     // 모든 칸이 채워지면 게임을 종료한다
-    if(scored === 13) endGame();
+    if(scored === 13) {
+        dice.forEach(input => input.disabled = true)
+    };
 }
 
 function showScore(i, score){
