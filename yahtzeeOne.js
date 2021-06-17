@@ -11,7 +11,15 @@ const ACTIVE = 'active';
 const FILLED = 'filled';
 
 function endGame() {
-    console.log('endgame');
+    let checkZero = confirm("점수판을 지우시겠습니까?")
+    if (!checkZero) return;
+
+    gameScore.forEach(div => {
+        div.classList.remove(FILLED);
+        div.innerText = '';
+        upperBonus.innerText = '';
+        total.innerText = '';
+    })
 }
 
 function countTotal() {
