@@ -14,6 +14,26 @@ function endGame() {
     let checkZero = confirm("점수판을 지우시겠습니까?")
     if (!checkZero) return;
 
+    // localStorage에 최고점수 저장하기
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth() + 1;
+    let date = today.getDate();
+
+    let newRecordInfo = { date : 0000-00-00, record : 000 };
+    newRecordInfo.date = `${year}-${month}-${date}`;
+    newRecordInfo.record = total.innerText;
+    
+    const bestRecordInfo = JSON.parse(localStorage.getItem('bestRecord'));
+
+    console.log('newRecordInfo', newRecordInfo);
+    console.log('bestRecordInfo', bestRecordInfo)
+
+    if(parseInt(newRecordInfo.record) > parseInt(bestRecordInfo.record)) {
+        localStorage.removeItem('bestRecord');
+        localStorage.setItem('bestRecord', JSON.stringify(newRecordInfo))
+    }
+
     dice.forEach(input => input.disabled = false)
 
     gameScore.forEach(div => {
@@ -47,7 +67,6 @@ function countTotal() {
         }
     }
     total.innerText = `${subTotal}`;
-
 }
 
 function chooseScore(event){
