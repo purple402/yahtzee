@@ -24,6 +24,15 @@ function displayBestRecord() {
     recordScore.innerHTML = `${bestRecord.score}점`;
 }
 
+function compareScores(newRecord) {
+    bestRecord = JSON.parse(localStorage.getItem('bestRecord'));
+
+    if(newRecord.score > bestRecord.score) {
+        localStorage.removeItem('bestRecord');
+        localStorage.setItem('bestRecord', JSON.stringify(newRecord));
+    }
+}
+
 function endGame() {
     let checkZero = confirm("점수판을 지우시겠습니까?")
     if (!checkZero) return;
@@ -34,19 +43,11 @@ function endGame() {
     let month = today.getMonth() + 1;
     let date = today.getDate();
 
-    let newRecordInfo = { date : 0000-00-00, record : 000 };
-    newRecordInfo.date = `${year}-${month}-${date}`;
-    newRecordInfo.record = total.innerText;
-    
-    const bestRecordInfo = JSON.parse(localStorage.getItem('bestRecord'));
+    let newRecord = { date : 0000-00-00, score : 000 };
+    newRecord.date = `${year}-${month}-${date}`;
+    newRecord.score = total.innerText;
 
-    console.log('newRecordInfo', newRecordInfo);
-    console.log('bestRecordInfo', bestRecordInfo)
-
-    if(parseInt(newRecordInfo.record) > parseInt(bestRecordInfo.record)) {
-        localStorage.removeItem('bestRecord');
-        localStorage.setItem('bestRecord', JSON.stringify(newRecordInfo))
-    }
+    compareScores(newRecord);
 
     dice.forEach(input => input.disabled = false)
 
