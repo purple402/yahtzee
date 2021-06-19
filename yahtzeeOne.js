@@ -4,11 +4,25 @@ const total = document.querySelector('[data-score-total]');
 const form = document.querySelector('form');
 const dice = form.querySelectorAll('input');
 const resetBtn = document.querySelector('[data-reset]');
+const recordDate = document.querySelector('.js-date');
+const recordScore = document.querySelector('.js-record');
 let diceValue = [];
 let rollCount = 0;
 let yahtzeeCount = 0;
 const ACTIVE = 'active';
 const FILLED = 'filled';
+
+function displayBestRecord() {
+    try {
+        bestRecord = JSON.parse(localStorage.getItem('bestRecord'));
+    } catch {
+        localStorage.setItem('bestRecord', JSON.stringify({ date : 0000-00-00, score : 000 }))
+        return;
+    }
+
+    recordDate.innerHTML = bestRecord.date;
+    recordScore.innerHTML = `${bestRecord.score}점`;
+}
 
 function endGame() {
     let checkZero = confirm("점수판을 지우시겠습니까?")
@@ -273,5 +287,6 @@ function handleSubmit(event){
 function init(){
     form.addEventListener('submit', handleSubmit);
     resetBtn.addEventListener('click', endGame);
+    displayBestRecord();
 }
 init();
