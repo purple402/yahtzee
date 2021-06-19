@@ -48,6 +48,7 @@ function endGame() {
     newRecord.score = total.innerText;
 
     compareScores(newRecord);
+    displayBestRecord();
 
     dice.forEach(input => input.disabled = false)
 
