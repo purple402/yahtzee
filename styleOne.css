@@ -8,10 +8,6 @@
     grid-auto-flow: column;
 }
 
-.grid-total {
-  grid-template-rows: 50px;
-}
-
 .grid-container > div {
   border: 1px solid black;
   display: flex;
@@ -47,4 +43,37 @@ form input {
 .total {
   color: black;
   font-weight: bold;
+}
+
+.grid-total {
+  display: grid;
+  grid-template-columns: 150px 80px;
+  font-size: 16px;
+  align-items: stretch;
+  grid-template-rows: 50px;
+  margin-bottom: 5px;
+  grid-auto-flow: column;
+}
+
+.total-record {
+  display: flex;
+}
+
+.best-record {
+  display: flex;
+}
+
+.record-info {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  align-items: center;
+}
+
+.record-score {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  width: 80px;
+  justify-content: center;
 }
