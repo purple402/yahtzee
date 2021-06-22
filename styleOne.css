@@ -1,8 +1,19 @@
+@font-face {
+  font-family: 'SDSamliphopangche_Basic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   height: 100vh;
   background: linear-gradient(to bottom right, #37affc, #9bd7fe);
+  font-family: 'SDSamliphopangche_Basic', sans-serif;
 }
 
+h1 {
+  font-size: 55px;
+}
 
 form {
   margin: 10px 0px;
@@ -18,7 +29,7 @@ form input {
 .grid-container {
     display: grid;
     grid-template-columns: 140px 70px 140px 70px;
-    font-size: 16px;
+    font-size: 20px;
     align-items: stretch;
     grid-template-rows: repeat(7, 50px);
     margin-bottom: 5px;
@@ -33,6 +44,8 @@ form input {
   border-radius: 10px;
 }
 
+div > .fas {
+  margin-right: 5px;
 }
 
 .score {
@@ -58,7 +71,7 @@ form input {
 .grid-total {
   display: grid;
   grid-template-columns: 140px 70px;
-  font-size: 16px;
+  font-size: 20px;
   align-items: stretch;
   grid-template-rows: 60px;
   margin-bottom: 5px;
