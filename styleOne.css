@@ -1,3 +1,8 @@
+body {
+  height: 100vh;
+  background: linear-gradient(to bottom right, #37affc, #9bd7fe);
+}
+
 
 form {
   margin: 10px 0px;
@@ -21,7 +26,7 @@ form input {
 }
 
 .grid-container > div {
-  border: 1px solid black;
+  border: 1px solid #2b88c2;
   display: flex;
   align-items: center;
   padding: 0px 10px;
