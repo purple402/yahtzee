@@ -1,3 +1,15 @@
+
+form {
+  margin: 10px 0px;
+}
+
+form input {
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+}
+
+
 .grid-container {
     display: grid;
     grid-template-columns: 140px 70px 140px 70px;
@@ -16,14 +28,6 @@
   border-radius: 10px;
 }
 
-form {
-  margin: 10px 0px;
-}
-
-form input {
-  width: 50px;
-  height: 50px;
-  font-size: 40px;
 }
 
 .score {
