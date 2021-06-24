@@ -33,19 +33,22 @@ input:valid {
 .grid-container {
     display: grid;
     grid-template-columns: 140px 70px 140px 70px;
+    width: 420px;
     font-size: 20px;
     align-items: stretch;
     grid-template-rows: repeat(7, 50px);
     margin-bottom: 5px;
     grid-auto-flow: column;
+    border-top: 1px solid #2b88c2;
+    border-left: 1px solid #2b88c2;
 }
 
 .grid-container > div {
-  border: 1px solid #2b88c2;
+  border-right: 1px solid #2b88c2;
+  border-bottom: 1px solid #2b88c2;
   display: flex;
   align-items: center;
   padding: 0px 10px;
-  border-radius: 10px;
 }
 
 div > .fas {
@@ -75,6 +78,7 @@ div > .fas {
 .grid-total {
   display: grid;
   grid-template-columns: 140px 70px;
+  width: 210px;
   font-size: 20px;
   align-items: stretch;
   grid-template-rows: 60px;
