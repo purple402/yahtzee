@@ -16,9 +16,36 @@ body {
   font-family: var(--font-style);
 }
 
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 h1 {
   font-size: 55px;
   font-weight: lighter;
+}
+
+.title input {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  border-bottom: var(--border-style);
+  width: 30vw;
+  text-align: center;
+}
+
+.title input::placeholder {
+  font-family: var(--font-style);
+  text-align: center;
+}
+
+.title input:focus {
+  outline: none;
+  font-family: var(--font-style);
+  color:rgba(0, 0, 0, 0.7);
 }
 
 .dice {
