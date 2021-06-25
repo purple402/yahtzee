@@ -7,8 +7,8 @@
 
 body {
   height: 100vh;
-  background: linear-gradient(to bottom right, #37affc, #9bd7fe);
   font-family: 'SDSamliphopangche_Basic', sans-serif;
+  background: linear-gradient(to bottom right, #37b0fcbb, #9bd6feb2);
 }
 
 h1 {
