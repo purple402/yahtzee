@@ -10,7 +10,8 @@ let yahtzeeCount = 0;
 const ACTIVE = 'active';
 const FILLED = 'filled';
 
-function displayBestRecord() {
+function loadInfo() {
+    // best record
     const recordDate = document.querySelector('.js-date');
     const recordScore = document.querySelector('.js-record');
     try {
@@ -19,7 +20,6 @@ function displayBestRecord() {
         localStorage.setItem('bestRecord', JSON.stringify({ date : 0000-00-00, score : 000 }))
         return;
     }
-
     recordDate.innerHTML = bestRecord.date;
     recordScore.innerHTML = `${bestRecord.score}점`;
 }
@@ -289,6 +289,6 @@ function handleSubmit(event){
 function init(){
     form.addEventListener('submit', handleSubmit);
     resetBtn.addEventListener('click', endGame);
-    displayBestRecord();
+    loadInfo();
 }
 init();
