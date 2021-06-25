@@ -4,8 +4,6 @@ const total = document.querySelector('[data-score-total]');
 const form = document.querySelector('.dice');
 const dice = form.querySelectorAll('input');
 const resetBtn = document.querySelector('[data-reset]');
-const recordDate = document.querySelector('.js-date');
-const recordScore = document.querySelector('.js-record');
 let diceValue = [];
 let rollCount = 0;
 let yahtzeeCount = 0;
@@ -13,6 +11,8 @@ const ACTIVE = 'active';
 const FILLED = 'filled';
 
 function displayBestRecord() {
+    const recordDate = document.querySelector('.js-date');
+    const recordScore = document.querySelector('.js-record');
     try {
         bestRecord = JSON.parse(localStorage.getItem('bestRecord'));
     } catch {
