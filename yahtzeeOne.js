@@ -1,8 +1,8 @@
 const gameScore = document.querySelectorAll('[data-score]');
 const upperBonus = document.querySelector('[data-score-bonus]');
 const total = document.querySelector('[data-score-total]');
-const form = document.querySelector('.dice');
-const dice = form.querySelectorAll('input');
+const diceForm = document.querySelector('.dice');
+const dice = diceForm.querySelectorAll('input');
 const resetBtn = document.querySelector('[data-reset]');
 let diceValue = [];
 let rollCount = 0;
@@ -287,7 +287,7 @@ function handleSubmit(event){
 }
 
 function init(){
-    form.addEventListener('submit', handleSubmit);
+    diceForm.addEventListener('submit', handleSubmit);
     resetBtn.addEventListener('click', endGame);
     loadInfo();
 }
