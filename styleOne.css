@@ -1,3 +1,8 @@
+:root {
+  --font-style: 'SDSamliphopangche_Basic', sans-serif;
+  --border-style: 1px solid #2b88c2;
+}
+
 @font-face {
   font-family: 'SDSamliphopangche_Basic';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
@@ -7,8 +12,8 @@
 
 body {
   height: 100vh;
-  font-family: 'SDSamliphopangche_Basic', sans-serif;
   background: linear-gradient(to bottom right, #37b0fcbb, #9bd6feb2);
+  font-family: var(--font-style);
 }
 
 h1 {
@@ -40,13 +45,13 @@ h1 {
     grid-template-rows: repeat(7, 50px);
     margin-bottom: 5px;
     grid-auto-flow: column;
-    border-top: 1px solid #2b88c2;
-    border-left: 1px solid #2b88c2;
+    border-top: var(--border-style);
+    border-left: var(--border-style);
 }
 
 .grid-container > div {
-  border-right: 1px solid #2b88c2;
-  border-bottom: 1px solid #2b88c2;
+  border-right: var(--border-style);
+  border-bottom: var(--border-style);
   display: flex;
   align-items: center;
   padding: 0px 10px;
