@@ -10,20 +10,6 @@ let yahtzeeCount = 0;
 const ACTIVE = 'active';
 const FILLED = 'filled';
 
-function loadInfo() {
-    // best record
-    const recordDate = document.querySelector('.js-date');
-    const recordScore = document.querySelector('.js-record');
-    try {
-        bestRecord = JSON.parse(localStorage.getItem('bestRecord'));
-    } catch {
-        localStorage.setItem('bestRecord', JSON.stringify({ date : 0000-00-00, score : 000 }))
-        return;
-    }
-    recordDate.innerHTML = bestRecord.date;
-    recordScore.innerHTML = `${bestRecord.score}점`;
-}
-
 function compareScores(newRecord) {
     bestRecord = JSON.parse(localStorage.getItem('bestRecord'));
 
@@ -284,6 +270,19 @@ function handleSubmit(event){
     // reset values
     diceValue = [];
     rollCount++;
+}
+
+function displayBestRecord() {
+    const recordDate = document.querySelector('.js-date');
+    const recordScore = document.querySelector('.js-record');
+    try {
+        bestRecord = JSON.parse(localStorage.getItem('bestRecord'));
+    } catch {
+        localStorage.setItem('bestRecord', JSON.stringify({ date : 0000-00-00, score : 000 }))
+        return;
+    }
+    recordDate.innerHTML = bestRecord.date;
+    recordScore.innerHTML = `${bestRecord.score}점`;
 }
 
 function init(){
