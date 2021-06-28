@@ -16,6 +16,7 @@ body {
   font-family: var(--font-style);
 }
 
+/* title */
 .title {
   display: flex;
   justify-content: space-between;
@@ -48,6 +49,7 @@ h1 {
   color:rgba(0, 0, 0, 0.7);
 }
 
+/* dice */
 .dice {
   margin: 10px 0px;
 }
@@ -63,6 +65,7 @@ h1 {
   
 }
 
+/* grid */
 .grid-container {
     display: grid;
     grid-template-columns: 2fr 1fr 2fr 1fr;
@@ -145,6 +148,7 @@ div > .fas {
   justify-content: center;
 }
 
+/* button */
 button {
   background-color: #f8585b;
   border: none;
