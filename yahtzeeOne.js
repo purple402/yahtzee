@@ -1,6 +1,9 @@
 const gameScore = document.querySelectorAll('[data-score]');
 const upperBonus = document.querySelector('[data-score-bonus]');
 const total = document.querySelector('[data-score-total]');
+const nameForm = document.querySelector('form.js-name');
+const nameInput = nameForm.querySelector('input');
+const username = document.querySelector('.username');
 const diceForm = document.querySelector('.dice');
 const dice = diceForm.querySelectorAll('input');
 const resetBtn = document.querySelector('[data-reset]');
@@ -272,6 +275,13 @@ function handleSubmit(event){
     rollCount++;
 }
 
+// 이름, 최고기록 불러오기
+function paintUserName(text) {
+    nameInput.classList.remove('showing');
+    username.classList.add('showing');
+    username.innerText = text;
+}
+
 function displayBestRecord() {
     const recordDate = document.querySelector('.js-date');
     const recordScore = document.querySelector('.js-record');
@@ -283,6 +293,25 @@ function displayBestRecord() {
     }
     recordDate.innerHTML = bestRecord.date;
     recordScore.innerHTML = `${bestRecord.score}점`;
+}
+
+function loadInfo() {
+    // user name
+    const currentUser = localStorage.getItem('username');
+    if (currentUser === null || currentUser === '') {
+        nameInput.classList.add('showing');
+        nameForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const currentValue = nameInput.value;
+            localStorage.setItem('username', currentValue);
+            paintUserName(currentValue);
+        });
+    } else {
+        paintUserName(currentUser);
+    }
+
+    // bestRecord
+    displayBestRecord();
 }
 
 function init(){

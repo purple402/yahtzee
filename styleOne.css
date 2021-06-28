@@ -26,6 +26,19 @@ body {
 h1 {
   font-size: 55px;
   font-weight: lighter;
+.name{
+  display: flex;
+  align-items: center;
+}
+
+.title form{
+  display: flex;
+}
+
+.title .username {
+  font-size: 24px;
+  width: 30vw;
+  text-align: center;
 }
 
 .title input {
@@ -38,7 +51,7 @@ h1 {
   text-align: center;
 }
 
-.title input::placeholder {
+.title input::placeholder, .title input:valid {
   font-family: var(--font-style);
   text-align: center;
 }
@@ -47,6 +60,14 @@ h1 {
   outline: none;
   font-family: var(--font-style);
   color:rgba(0, 0, 0, 0.7);
+}
+
+input[type="text"], .username {
+  display: none;
+}
+
+.showing {
+  display: block !important;
 }
 
 /* dice */
