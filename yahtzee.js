@@ -244,6 +244,10 @@ function nextGame(){
     let next = confirm("다음 판을 진행하시겠습니까?")
     if(!next) return;
 
+    // input 비우기
+    for(let i=0; i<5; i++){
+        dice[i].value = '';
+    }
     gameCount += 1;
     yahtzeeCount = 0;
     // 다음 열으로 이동
@@ -287,6 +291,10 @@ function resetScore(){
     gameScore = gameScoreSets['first'];
     yahtzeeCount = 0;
     gameCount = 1;
+
+    // input 비우기
+    for(let i=0; i<5; i++){
+        dice[i].value = '';
     }
 }
 
