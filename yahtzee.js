@@ -241,6 +241,9 @@ function handleSubmit(event) {
 }
 
 function nextGame(){
+    let next = confirm("다음 판을 진행하시겠습니까?")
+    if(!next) return;
+
     gameCount += 1;
     yahtzeeCount = 0;
     // 다음 열으로 이동
