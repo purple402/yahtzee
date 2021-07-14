@@ -4,6 +4,7 @@ const total = document.querySelector('[data-score-total]');
 const nameForm = document.querySelector('form.js-name');
 const nameInput = nameForm.querySelector('input');
 const username = document.querySelector('.username');
+const nameResetBtn = document.querySelector('.fa-times-circle');
 const diceForm = document.querySelector('.dice');
 const dice = diceForm.querySelectorAll('input');
 const resetBtn = document.querySelector('[data-reset]');
@@ -275,11 +276,21 @@ function handleSubmit(event){
     rollCount++;
 }
 
+function resetName() {
+    localStorage.removeItem('username');
+    username.classList.remove('showing');
+    nameResetBtn.classList.remove('showing');
+    username.innerText = '';
+    loadInfo();
+}
+
 // 이름, 최고기록 불러오기
 function paintUserName(text) {
     nameInput.classList.remove('showing');
     username.classList.add('showing');
     username.innerText = text;
+    nameResetBtn.classList.add('showing');
+    nameResetBtn.addEventListener('click', resetName)
 }
 
 function displayBestRecord() {
