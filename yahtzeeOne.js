@@ -16,11 +16,10 @@ const FILLED = 'filled';
 
 function compareScores(newRecord) {
     bestRecord = JSON.parse(localStorage.getItem('bestRecord'));
-
-    if(newRecord.score > bestRecord.score) {
+    if(bestRecord == null || newRecord.score > bestRecord.score) {
         localStorage.removeItem('bestRecord');
         localStorage.setItem('bestRecord', JSON.stringify(newRecord));
-    }
+    } else return;
 }
 
 function endGame() {
