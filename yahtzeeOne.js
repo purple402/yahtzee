@@ -297,12 +297,12 @@ function displayBestRecord() {
     const recordScore = document.querySelector('.js-record');
     try {
         bestRecord = JSON.parse(localStorage.getItem('bestRecord'));
+        recordDate.innerHTML = bestRecord.date;
+        recordScore.innerHTML = `${bestRecord.score}점`;
     } catch {
         localStorage.setItem('bestRecord', JSON.stringify({ date : 0000-00-00, score : 000 }))
         return;
     }
-    recordDate.innerHTML = bestRecord.date;
-    recordScore.innerHTML = `${bestRecord.score}점`;
 }
 
 function loadInfo() {
